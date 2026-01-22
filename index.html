@@ -88,14 +88,34 @@
     }
     .work-tag { font-size: 10px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; font-weight: 700; }
 
-    @media (min-width: 768px) {
-      .services-grid { grid-template-columns: repeat(3, 1fr); }
-      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-      .cta-group { flex-direction: row; justify-content: center; }
-      nav { display: flex; gap: 30px; }
-      nav a { font-size: 12px; text-decoration: none; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-      nav a:hover { color: var(--accent); }
-    }
+    /* Базовые стили ссылок (работают и на мобилках, и на ПК) */
+nav { 
+    display: flex; 
+    gap: 15px; /* Меньший отступ для мобилок */
+}
+
+nav a { 
+    font-size: 11px; 
+    text-decoration: none; 
+    color: var(--text-muted); 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    transition: 0.3s; 
+}
+
+nav a:hover { 
+    color: var(--accent); 
+}
+
+/* Стили специально для больших экранов */
+@media (min-width: 768px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-group { flex-direction: row; justify-content: center; }
+    
+    nav { gap: 30px; } /* Увеличиваем расстояние на ПК */
+    nav a { font-size: 12px; }
+}
 
     footer { padding: 100px 20px; text-align: center; border-top: 1px solid #111; }
   </style>
